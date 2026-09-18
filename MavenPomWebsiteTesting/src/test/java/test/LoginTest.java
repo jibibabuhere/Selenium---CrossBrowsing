@@ -14,8 +14,8 @@ public class LoginTest extends Base{
 	@Test (priority = 0)
 	
 	public void loginTestFn() {
-		Login_Page r = new Login_Page(driver); // object for Login page
-//		Home_Page s = new Home_Page(driver); // object for Login page
+		Login_Page r = new Login_Page(driver);
+//		Home_Page s = new Home_Page(driver); 
 	
 		r.enterUserName("student");
 		r.enterPassword("Password123");
@@ -26,14 +26,14 @@ public class LoginTest extends Base{
 	
 	public void homeTestFn() {
 		
-		Home_Page s = new Home_Page(driver); // object for Login page
+		Home_Page s = new Home_Page(driver);
 		
 		
-		String textValue = s.getTxt();  // do calling and comparison in this Test class other in Page class
-		Assert.assertEquals(textValue, "Log out"); ////1. b getting and checking text values of button 
+		String textValue = s.getTxt(); 
+		Assert.assertEquals(textValue, "Log out");
 		
-		String urlValue = s.url(); // do calling and comparison in this Test class other in Page class
-		Assert.assertTrue(urlValue.contains("successfully"));//2. b checking the url contains the value "successfully"
+		String urlValue = s.url();
+		Assert.assertTrue(urlValue.contains("successfully"));
 		
 		s.clickLogout();// click Logout button
 		
@@ -41,17 +41,17 @@ public class LoginTest extends Base{
 	
 	@Test (priority = 2)
 	
-	public void invalidUsernameFn() { // invalid username and valid password
+	public void invalidUsernameFn() {
 		
-		Invalid_Credential t = new Invalid_Credential(driver); // object for invalidCredential class
+		Invalid_Credential t = new Invalid_Credential(driver);
 		
 		t.enterUserName("jibi");// invalid username
 		t.enterPassword("Password123"); //valid password
 		t.clickLoginButton();
 		
-	    Assert.assertTrue(t.isErrorMessageDisplayed());  // verify error message is displayed
+	    Assert.assertTrue(t.isErrorMessageDisplayed());  
 	  
-	    Assert.assertEquals(t.getErrorMessageText(), "Your username is invalid!");  // verify username error message text
+	    Assert.assertEquals(t.getErrorMessageText(), "Your username is invalid!");  
 		
 	}
 	
@@ -59,14 +59,14 @@ public class LoginTest extends Base{
 @Test (priority = 3)
 	
 	public void invalidPasswordFn() {
-	Invalid_Credential t = new Invalid_Credential(driver); // object for invalidCredential class
+	Invalid_Credential t = new Invalid_Credential(driver);
 	
 	t.enterUserName("student");// valid username
 	t.enterPassword("123"); //invalid password
 	t.clickLoginButton();
 	
-	 Assert.assertTrue(t.isErrorMessageDisplayed()); // verify error message is displayed
-	    Assert.assertEquals(t.getErrorMessageText(), "Your password is invalid!");// verify password error message text
+	 Assert.assertTrue(t.isErrorMessageDisplayed());
+	    Assert.assertEquals(t.getErrorMessageText(), "Your password is invalid!");
 }
 
 	
