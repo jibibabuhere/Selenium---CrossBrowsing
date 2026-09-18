@@ -11,7 +11,7 @@ public WebDriver driver;
 	String url = "https://practicetestautomation.com/practice-test-login/";
 	
 	
-	@BeforeTest   // right click the project -> build path -> add libraries -> select TestNG -> next -> finish
+	@BeforeTest  
 	
 	public void setup() {
 		driver = new ChromeDriver();
