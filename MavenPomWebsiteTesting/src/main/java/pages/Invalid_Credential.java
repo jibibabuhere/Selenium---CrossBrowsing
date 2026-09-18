@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Invalid_Credential {	
 public WebDriver driver;
-	//Locators using page factory
+
 	@FindBy(id = "username") WebElement usernameField;
 	@FindBy(id = "password") WebElement passwordField; 
 	@FindBy(id = "submit") WebElement submitButton;
