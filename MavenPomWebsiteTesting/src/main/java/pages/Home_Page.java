@@ -8,29 +8,27 @@ import org.openqa.selenium.support.PageFactory;
 public class Home_Page {
 	
 public WebDriver driver;
-	//Locators using page factory
+
 	
 	@FindBy(xpath = "//a[text()='Log out']") WebElement logoutButton;
 	
-	//constructor to initialize page factory elements
+
 	public Home_Page(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		
 	}
 	
-	//actions
-	
-		public void clickLogout() { // to perform button click
+		public void clickLogout() {
 			logoutButton.click();
 			
 		}
 		
-		public String getTxt() {  //1.a  to get the text of button - the expecting code write this page class - comparison code write in Test class
+		public String getTxt() { 
 			return logoutButton.getText();
 		}
 		
-		public String url() {  //2. a to get the current url - the expecting code write this page class - comparison code write in Test class
+		public String url() { 
 			return driver.getCurrentUrl();
 		}
 }
