@@ -38,9 +38,9 @@ public class CrossBrowser {
 		   driver.manage().window().maximize();
 		driver.findElement(By.xpath("//input[@id='fname']")).sendKeys("jibi");
 		
-		driver.findElement(By.id("idOfButton")).click(); //click
+		driver.findElement(By.id("idOfButton")).click(); 
 		
-		Actions act = new Actions(driver); // double click and alert handling
+		Actions act = new Actions(driver); 
 		
 		WebElement d = driver.findElement(By.id("dblClkBtn"));
 		act.doubleClick(d);
@@ -51,10 +51,9 @@ public class CrossBrowser {
 		Alert a = driver.switchTo().alert();
 		a.accept();
 		
-		  //click female radio button
+		
         driver.findElement(By.id("female")).click();
         
-        // select 2 checkbox
         driver.findElement(By.className("Automation")).click();
 
         driver.findElement(By.className("Performance")).click();
