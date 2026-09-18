@@ -7,16 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 public class Invalid_Credential {	
 public WebDriver driver;
 	//Locators using page factory
-	@FindBy(id = "username") WebElement usernameField; //username
-	@FindBy(id = "password") WebElement passwordField; //password
+	@FindBy(id = "username") WebElement usernameField;
+	@FindBy(id = "password") WebElement passwordField; 
 	@FindBy(id = "submit") WebElement submitButton;
-    @FindBy(id = "error")WebElement errorMessage;    // error message
+    @FindBy(id = "error")WebElement errorMessage;   
 	
-	//constructor to initialize page factory elements
+	
 	public Invalid_Credential(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);   }
-	//actions
+
 	public void enterUserName(String usernmame) {
 		usernameField.sendKeys(usernmame);
 		
@@ -28,10 +28,10 @@ public WebDriver driver;
 		submitButton.click();
 		}
 	
-    public boolean isErrorMessageDisplayed() { // check if error message is displayed
+    public boolean isErrorMessageDisplayed() {
         return errorMessage.isDisplayed();
     }
-    public String getErrorMessageText() {    // get error message text
+    public String getErrorMessageText() {  
         return errorMessage.getText();
     }
 }
